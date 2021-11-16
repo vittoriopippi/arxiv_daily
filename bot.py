@@ -163,3 +163,7 @@ if __name__ == '__main__':
             print(f'  Next notification in: {time_remaining}', end='\r')
     except KeyboardInterrupt:
         alfred.save()
+    except telepot.exception.TelegramError:
+        print('Another instance of the same bot is running')
+    except Exception as e:
+        print(e)
