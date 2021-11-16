@@ -54,6 +54,9 @@ class Bot:
         content_type, chat_type, chat_id = telepot.glance(msg)
         user = models.get_or_create(db.session, User, commit=True, chat_id=chat_id)
         self.cmd_help(msg)
+        
+    def cmd_notify_all(self, msg):
+        self.notify_all()
     
     def cmd_set(self, msg):
         content_type, chat_type, chat_id = telepot.glance(msg)
@@ -157,6 +160,6 @@ if __name__ == '__main__':
             time_of_next_run = schedule.next_run()
             time_now = datetime.now()
             time_remaining = time_of_next_run - time_now
-            print(f'  Next notify in: {time_remaining}', end='\r')
+            print(f'  Next notification in: {time_remaining}', end='\r')
     except KeyboardInterrupt:
         alfred.save()
