@@ -6,7 +6,7 @@ if [[ $processes -gt 1 ]]
 then
     echo "Bot is already running"
 else
-    cd /home/vittorio/arxiv_bot
+    cd /home/vittorio/arxiv_daily
     git pull
     source venv/bin/activate
     python bot.py > output.txt &
