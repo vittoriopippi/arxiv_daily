@@ -1,6 +1,6 @@
 #!/bin/bash
 
-processes=$(ps aux -u vittorio | grep "python bot.py" | wc -l)
+processes=$(ps aux -u vittorio | grep "python3 bot.py" | wc -l)
 
 if [[ $processes -gt 1 ]]
 then
