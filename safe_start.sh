@@ -9,7 +9,7 @@ else
     cd /home/vittorio/arxiv_daily
     git pull
     source venv/bin/activate
-    python bot.py > output.txt &
+    python3 bot.py > output.txt &
     echo "Ok"
 fi
 
