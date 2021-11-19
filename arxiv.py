@@ -51,7 +51,8 @@ class Search:
                 art.summary = data['summary'].replace('\n', ' ')
                 
                 data['author'] = data['author'] if isinstance(data['author'], list) else [data['author'], ]
-                authors = [get_or_create(db.session, Author, name=a['name']) for a in data['author']]
+                data['author'] = list(dict.fromkeys([a['name'] for a in data['author']]))
+                authors = [get_or_create(db.session, Author, name=a) for a in data['author']]
                 for author in authors: art.authors.append(author)
                 
                 
