@@ -150,7 +150,7 @@ if __name__ == '__main__':
     try:
         alfred = Bot()
         
-        schedule.every().day.at("09:30").do(alfred.notify_all)
+        schedule.every().day.at("08:30").do(alfred.notify_all)
         # alfred.notify_all()
         # schedule.every().minute.do(alfred.notify_all)
 
