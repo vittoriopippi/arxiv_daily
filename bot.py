@@ -141,6 +141,7 @@ class Bot:
                 data = json.load(json_file)
                 self.token = data['token']
         else:
+            print('No "data.json" file found. I\'ve created the file, but you need to insert the telegram token.' )
             with open(self.filename, 'w') as outfile:
                 json.dump({'token': 'insert_token_here'}, outfile)
             sys.exit(1)
