@@ -157,11 +157,11 @@ if __name__ == '__main__':
         print('listening...')
         while True:
             schedule.run_pending()
-            time.sleep(30)
             time_of_next_run = schedule.next_run()
             time_now = datetime.now()
             time_remaining = time_of_next_run - time_now
-            print(f'Next notification in: {time_remaining}')
+            print(f'Next notification in: {str(time_remaining).split(".")[0]}')
+            time.sleep(30)
     except KeyboardInterrupt:
         alfred.save()
     except telepot.exception.TelegramError:
